@@ -1,0 +1,88 @@
+/** @format */
+
+.register {
+  max-width: 978px;
+  max-height: fit-content;
+  width: 80vw;
+  display: flex;
+  /* height: 70vh; */
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  /* box-shadow: 1px 3px 10px #e9ecef; */
+  background-color: white;
+}
+.MainContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.register span {
+  color: black;
+}
+
+#form {
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
+#form > input,
+.btn {
+  border: 1px solid #e9ecef;
+  padding: 0.9em 1em;
+}
+
+#form > input:focus {
+  outline: none;
+}
+
+#form > .btn {
+  background-color: #003049;
+  color: #e9ecef;
+  font-size: 1em;
+  cursor: pointer;
+}
+.privacypolicy {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+  gap: 1em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.register .col-1 {
+  margin: auto;
+  padding: 4em 0;
+}
+.col-1 {
+  margin: auto;
+  /* padding: 3em 0; */
+  background-image: url("https://res.cloudinary.com/da5mmxnn3/image/upload/v1648816348/Vishwapreneur/3Artboard_1-100_1_1_kh79sl.jpg");
+}
+
+.register .col-2 img {
+  width: 480px;
+  height: 100%;
+  object-fit: cover;
+  align-self: flex-end;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+}
+
+@media screen and (min-width: 860px) {
+  .register .col-2 img {
+    display: initial;
+  }
+}

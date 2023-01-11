@@ -1,0 +1,10 @@
+/** @format */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.mainContainer > h1 {
+  align-items: center;
+}
