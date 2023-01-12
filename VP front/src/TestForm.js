@@ -1,9 +1,13 @@
 /** @format */
-
+// import './assets/vp-logo.png';
 import React, { useState } from "react";
 // import { useForm } from "react-hook-form"
 // style
-import { Button, Checkbox, TextField } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  TextField,
+} from "@mui/material";
 import "./TestForm.css";
 // backend req handler
 import axios from "axios";
@@ -11,10 +15,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import font
 import "./assets/fonts/batmfa__.ttf";
-
+import { alpha, styled } from '@mui/material/styles';
+import logo from "./assets/vp-logo.png";
 export default function Form() {
-  const bgImg =
-    "https://res.cloudinary.com/da5mmxnn3/image/upload/v1648816348/Vishwapreneur/3Artboard_1-100_1_1_kh79sl.jpg";
+  // const bgImg =
+  //   "Vp-Coming-Soon/src/assets/vp-logo.png";
 
   const [paymentSucceded, setPaymentSucceded] = useState(false);
 
@@ -44,7 +49,7 @@ export default function Form() {
     }
 
     const result = await axios.post(
-      "https://registration-back-k5iw.onrender.com/api/v1/payment/orders"
+      "https://vishwapreneur-back.herokuapp.com/api/v1/payment/orders"
     );
 
     if (!result) {
@@ -55,7 +60,7 @@ export default function Form() {
     const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: "rzp_test_GEczOA6jSaLJ1f", // Enter the Key ID generated from the Dashboard
+      key: "rzp_live_PJeAjNSL4XrBIN", // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: currency,
       name: "Vishwapreneur ",
@@ -70,7 +75,7 @@ export default function Form() {
         };
 
         const result = await axios.post(
-          "https://registration-back-k5iw.onrender.com/api/v1/payment/success",
+          "https://vishwapreneur-back.herokuapp.com/api/v1/payment/success",
           data
         );
 
@@ -97,7 +102,7 @@ export default function Form() {
   const [city, setCity] = useState("");
   const [code, setCode] = useState("");
   const baseURL =
-    "https://registration-back-k5iw.onrender.com/api/v1/registerEvent";
+    "https://vishwapreneur-back.herokuapp.com/api/v1/registerEvent";
 
   const participant = {
     firstName: firstName,
@@ -117,141 +122,217 @@ export default function Form() {
   if (paymentSucceded) {
     submitNew();
   }
+  const resetAll = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setCollege("");
+    setCity("");
+    setCode("")
+  }
+  // const CssTextField = styled(TextField)({
+  //   '& label.Mui-focused': {
+  //     color: '#ffab0f',
+  //   },
+  //   '& .MuiInput-underline:after': {
+  //     borderBottomColor: 'green',
+  //   },
+  //   '& .MuiOutlinedInput-root': {
+  //     '& fieldset': {
+  //       borderColor: 'white',
+  //     },
+  //     '&:hover fieldset': {
+  //       borderColor: '#ffab0f',
+  //     },
+  //     '&.Mui-focused fieldset': {
+  //       borderColor: '#ffab0f',
+  //     },
+      
+  //     multilineColor: {
+  //       color: 'red'
+  //     }
+  //   },
+  // });
   return (
     <>
-      <section className="MainContainer">
-        <div className="register">
-          <div className="col-2">
-            <img src={bgImg} alt="Vishwapreneur" />
+      <section className='MainContainer'>
+        <div className='register'>
+          <div className='col-2'>
+            <img src={logo} alt='Vishwapreneur' />
+            Vishwapreneur'23
           </div>
-          <div className="col-1">
-            <h2>Book Your Seat Now!</h2>
-            <span>Experience an eSummit like Never before</span>
+          <div className='form-cnt'>
+            <h2>Registration Form</h2>
+            {/* <span>Experience an eSummit like Never before</span> */}
 
-            <form id="form" className="flex flex-col">
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="First Name"
-                name="firstName"
-                value={firstName}
-                onChange={(e) => {
-                  setFirstName(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="Last Name"
-                name="lastName"
-                value={lastName}
-                onChange={(e) => {
-                  setLastName(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="Email"
-                name="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="Phone Number"
-                name="phoneNumber"
-                value={phoneNumber}
-                onChange={(e) => {
-                  setPhoneNumber(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="Referral Code"
-                name="code"
-                value={code}
-                onChange={(e) => {
-                  setCode(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="College"
-                name="college"
-                value={college}
-                onChange={(e) => {
-                  setCollege(e.target.value);
-                }}
-                variant="outlined"
-              />
-              <TextField
-                required
-                autoCapitalize="ON"
-                autoComplete="OFF"
-                id="outlined-basic"
-                label="City"
-                name="city"
-                value={city}
-                onChange={(e) => {
-                  setCity(e.target.value);
-                }}
-                variant="outlined"
-              />
-              {firstName &&
+            <form id='form' className='flex flex-col'>
+              <div className='row-1'>
+
+                <TextField
+                  // className='pd-r'
+                  
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='First Name'
+                  name='firstName'
+                  value={firstName}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                    
+                  }}
+                  // margin="dense"
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  
+                />
+                <TextField
+                  
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='Last Name'
+                  name='lastName'
+                  value={lastName}
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                />
+
+
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='Email'
+                  name='email'
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                  
+                />
+              </div>
+              <div className='row-2'>
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='Phone Number'
+                  name='phoneNumber'
+                  value={phoneNumber}
+                  onChange={(e) => {
+                    setPhoneNumber(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                />
+
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='Referral Code'
+                  name='code'
+                  value={code}
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                />
+              </div>
+              <div className='row-3'>
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='College'
+                  name='college'
+                  value={college}
+                  onChange={(e) => {
+                    setCollege(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                />
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  autoCapitalize='ON'
+                  autoComplete='OFF'
+                  id='outlined-basic'
+                  label='City'
+                  name='city'
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                  }}
+                  variant='outlined'
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                />
+              </div>
+              {/* {(firstName &&
                 lastName &&
                 city &&
                 college &&
                 phoneNumber &&
-                email && (
+                email) && (
                   <Button onClick={displayRazorpay}>Proceed to payment</Button>
-                )}
+                )} */}
             </form>
-            <div className="privacypolicy">
-              <Checkbox />
+            <div className='privacypolicy'>
+
               <p>
+                <Checkbox />
                 {" "}
-                I Agree to{" "}
-                <a href="https://vishwapreneur.in/privacypolicy">
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a href="https://vishwapreneur.in/termsAndConditions">
-                  {" "}
-                  Terms and Conditions
-                </a>{" "}
-                of Vishwapreneur
+                I Agree to <a href='https://vishwapreneur.in/privacypolicy'>Privacy Policy</a> and{" "}
+                <a href='https://vishwapreneur.in/termsAndConditions'> Terms and Conditions</a> of Vishwapreneur
               </p>
+              <p> Need Any Assistance? </p>
+              <p>Contact Us at : <a href="mailto:contact@vishwapreneur.in">contact@vishwapreneur.in</a> / <a href="telto:9923411116">+919923411116</a></p>
             </div>
-            <p> Need Any Assistance? </p>
-            <p>
-              Contact Us at :{" "}
-              <a href="mailto:contact@vishwapreneur.in">
-                contact@vishwapreneur.in
-              </a>{" "}
-              / <a href="telto:9011041122">+919011041122</a>
-            </p>
+            <div className="buttons">
+              <div className="reset1">
+                <Button onClick={resetAll}>Reset All</Button>
+                {/* <div>< input type="reset" value="Reset All"/></div> */}
+              </div>
+              <div className="submit">
+               <Button onClick={displayRazorpay} >Submit Form</Button>         
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
