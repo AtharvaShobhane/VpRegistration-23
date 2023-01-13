@@ -5,7 +5,7 @@
   /* max-height: fit-content; */
   width: 90vw;
   display: flex;
-  height: 100%;
+  height: 105%;
   /* border: 1px solid #e9ecef; */
 
   border-radius: 25px;
@@ -32,11 +32,12 @@ h2{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image:linear-gradient(rgba(67,67,67,0.5) ,rgba(0,0,0,0.5)), url("D:\Third Year\EDC\Technical VP\vp-reg\Vp-Coming-Soon\src\assets\img-parallax-01.png");
+  background-image:linear-gradient(rgba(67,67,67,0.5) ,rgba(0,0,0,0.5)), url("C:\Users\chand\OneDrive\Desktop\React\vpreg\VPRegistration23\VP front\src\assets\img-parallax-01.png");
   background-size: cover;
 }
 .register span {
   color: black;
+  /* width: 1rem; */
 }
 .form-cnt span{
   color: white;
@@ -48,6 +49,10 @@ h2{
   max-width: 46rem;
   width: 100vw;
   margin: 1rem 1rem;
+}
+
+span {
+  width: 1rem;
 }
 
 #form > input,
@@ -103,7 +108,7 @@ h2{
   align-self: flex-end;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  display: none;
+  /* display: none; */
 }
 .col-2{
   
@@ -124,11 +129,11 @@ h2{
 .row-2{
   width: 100%;
 }
-@media screen and (min-width: 860px) {
+/* @media screen and (min-width: 860px) {
   .register .col-2 img {
     display: initial;
   }
-}
+} */
 
 @font-face {
   font-family: 'BatmanForeverAlternate';
@@ -155,8 +160,8 @@ h2{
   border: 1px solid #ffab0f;
   margin-right: 1rem;
   padding-top: 0.3rem;
-  padding-right: 1.4rem;
-  padding-left: 1.4rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .buttons .submit:hover {
@@ -189,4 +194,132 @@ h2{
 
 .buttons .submit button:hover {
   color: white;
+}
+
+@media (min-width:350px) and (max-width: 768px) {
+  .MainContainer {
+    background-image: none;
+    flex-direction: column;
+    background-size: 200vh;
+    height: 200vh;
+    width: 101%;
+    background:radial-gradient( circle at 24.1% 68.8%, rgb(59, 20, 122) 0%, rgb(26, 1, 46) 99.4% );;
+  }
+
+
+  .col-2 {
+    width: 4rem;
+    height: 8rem;
+    border: none;
+    /* font-size: 1.7rem; */
+    padding-left: 0.4rem;
+  }
+
+  .col-2 img {
+    margin-left: -0.8rem;
+  }
+
+  .col-2 p {
+    font-size: 1.7rem;
+    padding-left: 0.6rem;
+  }
+
+  #logo {
+    height: 20rem;
+    width: 20rem;
+    padding-left: 2.5rem;
+    padding-top: 6.3rem;
+  }
+
+  #title {
+    margin-top: -0.3rem;
+    padding-left:40%;
+    font-size: 80%; 
+  }
+
+  .title-cnt {
+    text-align: center;
+  }
+
+  .form-cnt {
+    padding-top: 18rem;
+    width: 85vw;
+  }
+
+  .form-cnt h2 {
+    text-align: center;
+    padding-left: 2.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+  }
+
+  .register {
+    width: 100%;
+    height: 34rem;
+    flex-direction: column;
+    /* position: fixed; */
+    margin-top: -180vh;
+    border-radius: 0;
+    background-color: radial-gradient( circle at 24.1% 68.8%, rgb(59, 20, 122) 0%, rgb(26, 1, 46) 99.4% );;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .row-1 {
+    flex-direction: column;
+    width: 93%;
+  }
+
+  .row-2 {
+    flex-direction: column;
+    width: 93%;
+  }
+
+  .row-3 {
+    flex-direction: column;
+    width: 93%;
+  }
+
+  .privacypolicy {
+    width: 107%;
+    /* padding-left: 0; */
+    align-items: center;
+  }
+
+  #contactUs {
+    padding-top: 2rem;
+    width: 25rem;
+  }
+
+  #mail {
+    padding-top: 0rem;
+  }
+
+  #phone {
+    padding-left: 1rem;
+  }
+
+  #form {
+    width: 96vw;
+  }  
+
+  .buttons {
+    margin-top: 2rem;
+    padding-left: 20%;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .reset1 {
+    padding-bottom: 1%;
+    width: 80%;
+  }
+
+  .submit {
+    padding-bottom: 1%;
+    width: 87%;
+    margin-bottom: 1.5rem;
+  }
 }

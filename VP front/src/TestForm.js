@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 // import font
 import "./assets/fonts/batmfa__.ttf";
 import { alpha, styled } from '@mui/material/styles';
-import logo from "./assets/vp-logo.png";
+import logo from "./assets/vp-LOGO 1.png";
 export default function Form() {
   // const bgImg =
   //   "Vp-Coming-Soon/src/assets/vp-logo.png";
@@ -159,8 +159,10 @@ export default function Form() {
       <section className='MainContainer'>
         <div className='register'>
           <div className='col-2'>
-            <img src={logo} alt='Vishwapreneur' />
-            Vishwapreneur'23
+            <img id='logo' src={logo} alt='Vishwapreneur' />
+            <div className="title-cnt">
+              <p id='title'>Vishwapreneur'23</p>
+            </div>
           </div>
           <div className='form-cnt'>
             <h2>Registration Form</h2>
@@ -170,6 +172,7 @@ export default function Form() {
               <div className='row-1'>
 
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   // className='pd-r'
                   
                   autoCapitalize='ON'
@@ -183,16 +186,19 @@ export default function Form() {
                     
                   }}
                   // margin="dense"
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
+                  color="warning"
                   
                 />
+                <span></span>
+                <br></br>
                 <TextField
-                  
+                  sx={{border: "outset #ffab0f 1px"}}
                   autoCapitalize='ON'
                   autoComplete='OFF'
                   id='outlined-basic'
@@ -202,16 +208,19 @@ export default function Form() {
                   onChange={(e) => {
                     setLastName(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
+                  color="warning"
                 />
+                <br></br>
 
-
+                <span></span>
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
@@ -224,14 +233,15 @@ export default function Form() {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
-                  
+                  color="warning"
                 />
               </div>
               <div className='row-2'>
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
@@ -244,12 +254,16 @@ export default function Form() {
                   onChange={(e) => {
                     setPhoneNumber(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
+                  color="warning"
                 />
+                <span></span>
+                <br></br>
 
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
@@ -262,13 +276,15 @@ export default function Form() {
                   onChange={(e) => {
                     setCode(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
+                  color="warning"
                 />
               </div>
               <div className='row-3'>
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
@@ -281,11 +297,16 @@ export default function Form() {
                   onChange={(e) => {
                     setCollege(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
+                  color="warning"
                 />
+                  <span></span>
+                  <br></br>
+
                 <TextField
+                sx={{border: "outset #ffab0f 1px"}}
                   InputLabelProps={{
                     style: { color: 'white' },
                   }}
@@ -298,9 +319,10 @@ export default function Form() {
                   onChange={(e) => {
                     setCity(e.target.value);
                   }}
-                  variant='outlined'
+                  variant='filled'
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
+                  color="warning"
                 />
               </div>
               {/* {(firstName &&
@@ -320,8 +342,9 @@ export default function Form() {
                 I Agree to <a href='https://vishwapreneur.in/privacypolicy'>Privacy Policy</a> and{" "}
                 <a href='https://vishwapreneur.in/termsAndConditions'> Terms and Conditions</a> of Vishwapreneur
               </p>
-              <p> Need Any Assistance? </p>
-              <p>Contact Us at : <a href="mailto:contact@vishwapreneur.in">contact@vishwapreneur.in</a> / <a href="telto:9923411116">+919923411116</a></p>
+              <p id="contactUs"> Need Any Assistance? </p>
+              <p id="mail">Contact Us: <a href="mailto:contact@vishwapreneur.in">contact@vishwapreneur.in</a></p>
+              <p id="phone"><a href="telto:9923411116">+919923411116</a></p>
             </div>
             <div className="buttons">
               <div className="reset1">
