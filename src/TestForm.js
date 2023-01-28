@@ -105,6 +105,7 @@ export default function Form() {
   const [code, setCode] = useState("");
   const baseURL =
     "https://registration-back-k5iw.onrender.com/api/v1/registerEvent";
+    const [errors, setErrors] = useState({});
 
     //------------------------------------------------------------
     /*
@@ -137,18 +138,44 @@ export default function Form() {
   }
   */
 //------------------------------------------------------------------
-
+//-----------------------------------------------------------------
 const handleSubmit = async (e) => {
   e.preventDefault();
+
+   // Validate form fields
+   let formErrors = {};
+   if (!firstName) {
+     formErrors.name = 'Name is required';
+   }
+   if (!email) {
+     formErrors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      formErrors.email = 'Invalid email address';
+    }
+   
+   if (!phoneNumber) {
+     formErrors.phoneNumber = 'Phone number is required';
+   }else if (!/^\d{10}$/.test(phoneNumber)) {
+    formErrors.phoneNumber = 'Phone number must be 10 digits';
+  }
+
+    // If there are errors, update the state and return
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+
   setLoading(true);
   try {
+    const formData = { firstName: firstName.toLowerCase(), lastName: lastName.toLowerCase(), phoneNumber,
+      email, code, college, city }
+      console.log(formData);
     const response = await fetch(baseURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({firstName, lastName, phoneNumber,
-        email, code, college, city}),
+      body: JSON.stringify(formData),
     });
     if (response.status === 200) {
       navigate('/success');
@@ -230,9 +257,7 @@ const handleSubmit = async (e) => {
                   label="First Name"
                   name="firstName"
                   value={firstName}
-                  onChange={(e) => {
-                    setFirstName(e.target.value);
-                  }}
+                  onChange={(e) => setFirstName(e.target.value)}
                   // margin="dense"
                   variant="filled"
                   multiline
@@ -242,6 +267,7 @@ const handleSubmit = async (e) => {
                   }}
                   color="warning"
                 />
+                {errors.firstName && <span>{errors.firstName}</span>}
                 <span></span>
                 <br></br>
                 <TextField
@@ -287,6 +313,8 @@ const handleSubmit = async (e) => {
                   inputProps={{ style: { color: "#ffab0f" } }}
                   color="warning"
                 />
+                  {errors.phoneNumber && <span>{errors.phoneNumber} </span>}
+
               </div>
               <div className="row-2">
                 <TextField
@@ -301,16 +329,15 @@ const handleSubmit = async (e) => {
                   label="Email"
                   name="email"
                   value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  onChange={(e) => setEmail(e.target.value)}
                   variant="filled"
                   multiline
                   inputProps={{ style: { color: "#ffab0f" } }}
                   color="warning"
-                />
-
+                  />
+                  {errors.email && <span>{errors.email} </span>}
                 <span></span>
+                  
                 <br></br>
 
                 <TextField
