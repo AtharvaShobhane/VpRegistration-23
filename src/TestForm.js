@@ -111,8 +111,6 @@ export default function Form() {
     /*
   const registrationSuccess = async () => {
     
-
-
   const participant = {
     firstName: firstName,
     lastName: lastName,
@@ -145,18 +143,18 @@ const handleSubmit = async (e) => {
    // Validate form fields
    let formErrors = {};
    if (!firstName) {
-     formErrors.name = 'Name is required';
+     formErrors.name = '*Name is required';
    }
    if (!email) {
-     formErrors.email = 'Email is required';
+     formErrors.email = '*Email is required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-      formErrors.email = 'Invalid email address';
+      formErrors.email = '*Invalid email address';
     }
    
    if (!phoneNumber) {
-     formErrors.phoneNumber = 'Phone number is required';
+     formErrors.phoneNumber = '*Phone number is required';
    }else if (!/^\d{10}$/.test(phoneNumber)) {
-    formErrors.phoneNumber = 'Phone number must be 10 digits';
+    formErrors.phoneNumber = '*Phone number must be 10 digits';
   }
 
     // If there are errors, update the state and return
@@ -181,6 +179,7 @@ const handleSubmit = async (e) => {
       navigate('/success');
     } else {
       setError(await response.text());
+      console.log(response)
     }
     setLoading(false);
     // console.log(await response.text());
@@ -313,13 +312,14 @@ const handleSubmit = async (e) => {
                   inputProps={{ style: { color: "#ffab0f" } }}
                   color="warning"
                 />
-                  {errors.phoneNumber && <span>{errors.phoneNumber} </span>}
+                  
 
               </div>
+              {errors.phoneNumber && <span className="m-span" style={{width:'15rem', fontFamily:'Poppins',fontSize:'0.8rem',color:'#ff0033'}}>{errors.phoneNumber} </span>}
               <div className="row-2">
                 <TextField
                   required
-                  sx={{ border: "outset #ffab0f 1px" }}
+                  sx={{ border: "outset #ffab0f 1px" , width:"100%"}}
                   InputLabelProps={{
                     style: { color: "white" },
                   }}
@@ -335,31 +335,10 @@ const handleSubmit = async (e) => {
                   inputProps={{ style: { color: "#ffab0f" } }}
                   color="warning"
                   />
-                  {errors.email && <span>{errors.email} </span>}
-                <span></span>
-                  
-                <br></br>
-
-                <TextField
-                  sx={{ border: "outset #ffab0f 1px" }}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  autoCapitalize="ON"
-                  autoComplete="OFF"
-                  id="outlined-basic"
-                  label="Referral Code"
-                  name="code"
-                  value={code}
-                  onChange={(e) => {
-                    setCode(e.target.value);
-                  }}
-                  variant="filled"
-                  multiline
-                  inputProps={{ style: { color: "#ffab0f" } }}
-                  color="warning"
-                />
+                
               </div>
+              {errors.email && <span style={{width:'11rem', fontFamily:'Poppins',fontSize:'0.8rem',color:'#ff0033'}}>{errors.email} </span>}
+
               <div className="row-3">
                 <TextField
                   required
@@ -404,6 +383,29 @@ const handleSubmit = async (e) => {
                   inputProps={{ style: { color: "#ffab0f" } }}
                   color="warning"
                 />
+                <span></span>
+                <br></br>
+                <TextField
+                  sx={{ border: "outset #ffab0f 1px" }}
+                  InputLabelProps={{
+                    style: { color: "white" },
+                  }}
+                  autoCapitalize="ON"
+                  autoComplete="OFF"
+                  id="outlined-basic"
+                  label="Referral Code"
+                  name="code"
+                  value={code}
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                  }}
+                  variant="filled"
+                  multiline
+                  inputProps={{ style: { color: "#ffab0f" } }}
+                  color="warning"
+                />
+                <span></span>
+                
               </div>
               {firstName &&
                 lastName &&
