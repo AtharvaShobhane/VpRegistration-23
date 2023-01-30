@@ -7,7 +7,6 @@
   display: flex;
   height: 105%;
   /* border: 1px solid #e9ecef; */
-
   border-radius: 25px;
   /* box-shadow: 1px 3px 10px #e9ecef; */
   background-color: rgba(0,0,0,0.8);
@@ -32,7 +31,7 @@ h2{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image:linear-gradient(rgba(67,67,67,0.5) ,rgba(0,0,0,0.5)), url("C:\Users\chand\OneDrive\Desktop\React\vpreg\VPRegistration23\VP front\src\assets\img-parallax-01.png");
+  background-image:linear-gradient(rgba(67,67,67,0.5) ,rgba(0,0,0,0.5)), url("D:\Third Year\EDC\Technical VP\vp-reg\Vp-Coming-Soon\VPRegistration23\VP front\src\assets\img-parallax-01.png");
   background-size: cover;
 }
 .register span {
@@ -127,7 +126,7 @@ span {
   margin: 0px 10px;
 }
 .row-2{
-  width: 100%;
+  width: 87%;
 }
 /* @media screen and (min-width: 860px) {
   .register .col-2 img {
@@ -146,6 +145,8 @@ span {
   padding-left: 14rem;
   /* padding-bottom: 2rem; */
   padding-top: 2rem;
+  right: 10%;
+  position: relative;
 }
 
 .buttons .reset1 {
@@ -194,6 +195,19 @@ span {
 
 .buttons .submit button:hover {
   color: white;
+}
+.error-button{
+  border: 1px solid #ffab0f;
+  margin-top: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-right: 1rem;
+  padding-top: 0.3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background-color: #ffab0f;
+}
+.error-button:hover{
+  background-color: #ec9f10;
 }
 
 @media (min-width:350px) and (max-width: 768px) {
@@ -321,5 +335,12 @@ span {
     padding-bottom: 1%;
     width: 87%;
     margin-bottom: 1.5rem;
+  }
+  .m-span{
+    width: 0rem;
+    margin-left: 0rem;
+  }
+  .form-cnt span{
+    margin-left: 0px;
   }
 }

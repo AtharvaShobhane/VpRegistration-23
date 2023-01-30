@@ -8,6 +8,7 @@ import TestForm from "./TestForm";
 import TermsAndConditions from "./TermsAndConditions";
 import PrivacyPolicy from "./PrivacyPolicy";
 import RegClosed from "./RegClosed";
+import Error from "./ErrorPage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="registerforvp" element={<TestForm />} />
         <Route path="/termsAndConditions" element={<TermsAndConditions />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/closed" element={<RegClosed />} />
+        {/* <Route path="/closed" element={<RegClosed />} /> */}
+        <Route path="/error" element={<Error />} />
         <Route path="/" element={<TestForm />} />
       </Routes>
     </div>

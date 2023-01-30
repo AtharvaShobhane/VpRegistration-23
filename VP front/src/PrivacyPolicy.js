@@ -5,8 +5,8 @@ import "./privacy.css";
 
 function PrivacyPolicy() {
   return (
-    <div>
-      <h1>Privacy Policy for Vishwapreneur</h1>
+    <div className="privacy">
+      <div className="h2-pri">Privacy Policy for Vishwapreneur</div>
       <p>
         At Vishwapreneur, accessible from https://vishwapreneur.in, one of our
         main priorities is the privacy of our visitors. This Privacy Policy
@@ -24,12 +24,12 @@ function PrivacyPolicy() {
         any information collected offline or via channels other than this
         website.
       </p>
-      <h2>Consent</h2>
+      <div className="h2-pri">Consent</div>
       <p>
         By using our website, you hereby consent to our Privacy Policy and agree
         to its terms.
       </p>
-      <h2>Information we collect</h2>
+      <div className="h2-pri">Information we collect</div>
       <p>
         The personal information that you are asked to provide, and the reasons
         why you are asked to provide it, will be made clear to you at the point
@@ -46,7 +46,7 @@ function PrivacyPolicy() {
         information, including items such as name, company name, address, email
         address, and telephone number.
       </p>
-      <h2>How we use your information</h2>
+      <div className="h2-pri">How we use your information</div>
       <p>We use the information we collect in various ways, including to:</p>
       <ul>
         <li>Provide, operate, and maintain our website</li>
@@ -62,7 +62,7 @@ function PrivacyPolicy() {
         <li>Send you emails</li>
         <li>Find and prevent fraud</li>
       </ul>
-      <h2>Log Files</h2>
+      <div className="h2-pri">Log Files</div>
       <p>
         Vishwapreneur follows a standard procedure of using log files. These
         files log visitors when they visit websites. All hosting companies do
@@ -75,7 +75,7 @@ function PrivacyPolicy() {
         tracking users' movement on the website, and gathering demographic
         information.
       </p>
-      <h2>Advertising Partners Privacy Policies</h2>
+      <div className="h2-pri">Advertising Partners Privacy Policies</div>
       <p>
         You may consult this list to find the Privacy Policy for each of the
         advertising partners of Vishwapreneur.
@@ -93,7 +93,7 @@ function PrivacyPolicy() {
         Note that Vishwapreneur has no access to or control over these cookies
         that are used by third-party advertisers.
       </p>
-      <h2>Third Party Privacy Policies</h2>
+      <div className="h2-pri">Third Party Privacy Policies</div>
       <p>
         Vishwapreneur's Privacy Policy does not apply to other advertisers or
         websites. Thus, we are advising you to consult the respective Privacy
@@ -107,7 +107,7 @@ function PrivacyPolicy() {
         specific web browsers, it can be found at the browsers' respective
         websites.
       </p>
-      <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+      <div className="h2-pri">CCPA Privacy Rights (Do Not Sell My Personal Information)</div>
       <p>
         Under the CCPA, among other rights, California consumers have the right
         to:
@@ -129,7 +129,7 @@ function PrivacyPolicy() {
         If you make a request, we have one month to respond to you. If you would
         like to exercise any of these rights, please contact us.
       </p>
-      <h2>GDPR Data Protection Rights</h2>
+      <div className="h2-pri">GDPR Data Protection Rights</div>
       <p>
         We would like to make sure you are fully aware of all of your data
         protection rights. Every user is entitled to the following:
@@ -165,7 +165,7 @@ function PrivacyPolicy() {
         If you make a request, we have one month to respond to you. If you would
         like to exercise any of these rights, please contact us.
       </p>
-      <h2>Children's Information</h2>
+      <div className="h2-pri">Children's Information</div>
       <p>
         Another part of our priority is adding protection for children while
         using the internet. We encourage parents and guardians to observe,

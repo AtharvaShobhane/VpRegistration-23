@@ -4,8 +4,8 @@ import React from "react";
 
 function TermsAndConditions() {
   return (
-    <div>
-      <h1> Terms and Conditions for Vishwapreneur</h1>
+    <div className="privacy">
+      <div className="h2-pri"> Terms and Conditions for Vishwapreneur</div>
       <p>
         Access to Vishwapreneur- Person from any age group from 13(minimum age)
         is allowed to attend Vishwapreneur
@@ -45,11 +45,11 @@ function TermsAndConditions() {
           5)No political comment will be tolerated regarding Vishwapreneur.
         </p>
       </p>
-  <h2>Refund Policy</h2>
+  <div className="h2-pri">Refund Policy</div>
   <h3>Ticket Fees- Ticket fees once paid are non
           refundable</h3>
   
-  <h2>Address</h2>
+  <div className="h2-pri">Address</div>
   <p>EDC HQ,VIIT Campus, Kondhwa,Pune-48</p>
     </div>
   );
